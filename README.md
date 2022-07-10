@@ -1,3 +1,3 @@
 # Learning Nodejs
 
-- Do not use this package
+- This package is prepare for testing purpose.
