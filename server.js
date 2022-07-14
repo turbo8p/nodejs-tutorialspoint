@@ -70,7 +70,7 @@ app.post('/file_upload', function (req, res) {
 });
 
 app.get('/live', function (req, res) {
-   res.send('App is live3.');
+   res.send(`App is live3., ENV = ${process.env.ENV}`);
 })
 
 app.get('/ready', function (req, res) {
