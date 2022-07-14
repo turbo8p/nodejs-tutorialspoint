@@ -6,6 +6,7 @@ services:
       context: ./
       target: local
     container_name: snocko
+    restart: always
     ports:
       - 8081:8081
     volumes:
