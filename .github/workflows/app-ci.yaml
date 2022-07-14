@@ -39,6 +39,7 @@ jobs:
         with:
           key: ${{ secrets.SSH_KEY }}
           name: id_rsa # optional
+          known_hosts: unnecessary
           if_key_exists: fail
 
       - name: Update manifest file and run CD script
