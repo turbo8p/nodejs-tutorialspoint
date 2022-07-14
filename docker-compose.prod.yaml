@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   snocko:
-    image: public.ecr.aws/s7j8l1f2/snocko:575f3ac837ee4d94fb32b19640e42d107e480425
+    image: public.ecr.aws/s7j8l1f2/snocko:6a987638eb075927ec9afcf97270ad2c4e099269
     container_name: snocko
     restart: always
     ports:
