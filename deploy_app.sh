@@ -4,4 +4,4 @@
 set -eE
 
 cd /var/docker/nodejs-tutorialspoint
-docker-compose up -d
+docker-compose -f docker-compose.prod.yaml up -d
