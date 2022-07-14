@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  snocko:
+    image: {to be filled}
+    container_name: snocko
+    ports:
+      - 8080:8081

@@ -69,6 +69,14 @@ app.post('/file_upload', function (req, res) {
    });
 });
 
+app.get('/live', function (req, res) {
+   res.send('App is live.');
+})
+
+app.get('/ready', function (req, res) {
+   res.send('App is ready.');
+})
+
 
 var server = app.listen(8081, () => {
    var host = server.address().address
