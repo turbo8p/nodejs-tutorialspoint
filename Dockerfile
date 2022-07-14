@@ -16,7 +16,7 @@ RUN npm ci
 
 CMD ["tail", "-f", "/dev/null"]
 
-FROM base as production
+FROM base as prod
 
 COPY ./ /var/www/project
 
