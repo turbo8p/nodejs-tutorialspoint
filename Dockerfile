@@ -14,7 +14,7 @@ COPY ./ /var/www/project
 
 RUN npm ci
 
-CMD ["tail", "-f", "/dev/null"]
+CMD ["npm", "run", "start"]
 
 FROM base as prod
 
