@@ -70,7 +70,7 @@ app.post('/file_upload', function (req, res) {
 });
 
 app.get('/live', function (req, res) {
-   res.send('App is live.');
+   res.send('App is live2.');
 })
 
 app.get('/ready', function (req, res) {
