@@ -41,9 +41,13 @@ jobs:
           name: id_rsa # optional
           known_hosts: unnecessary
           if_key_exists: fail
+        
+      - name: Config git user
+        uses: fregante/setup-git-user@v1
 
       - name: Update manifest file and run CD script
         run: |
           yq -i '.services.snocko.image = "public.ecr.aws/s7j8l1f2/snocko:$GITHUB_SHA"' docker-compose.prod.yaml
           git add * && git commit -m "Update docker-compose.prod.yaml"
+          git push
           ssh -o "StrictHostKeyChecking=no" ubuntu@54.251.139.248 "bash /var/docker/nodejs-tutorialspoint/deploy_app.sh -a"
