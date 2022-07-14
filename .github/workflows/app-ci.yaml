@@ -37,9 +37,9 @@ jobs:
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2.3.1
         with:
-        key: ${{ secrets.SSH_KEY }}
-        name: id_rsa # optional
-        if_key_exists: fail
+          key: ${{ secrets.SSH_KEY }}
+          name: id_rsa # optional
+          if_key_exists: fail
 
       - name: Update manifest file and run CD script
         run: |
