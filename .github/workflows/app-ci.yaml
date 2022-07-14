@@ -30,3 +30,19 @@ jobs:
         run: |
           docker build . --target=prod --tag=public.ecr.aws/s7j8l1f2/snocko:$GITHUB_SHA
           docker push public.ecr.aws/s7j8l1f2/snocko:$GITHUB_SHA
+      
+      - name: yq - portable yaml processor
+        uses: mikefarah/yq@v4.25.3
+      
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2.3.1
+        with:
+        key: ${{ secrets.SSH_KEY }}
+        name: id_rsa # optional
+        if_key_exists: fail
+
+      - name: Update manifest file and run CD script
+        run: |
+          yq -i '.services.snocko.image = "public.ecr.aws/s7j8l1f2/snocko:$GITHUB_SHA"' docker-compose.prod.yaml
+          git add * && git commit -m "Update docker-compose.prod.yaml"
+          ssh -o "StrictHostKeyChecking=no" ubuntu@54.251.139.248 "deploy_app -a"

@@ -4,4 +4,5 @@
 set -eE
 
 cd /var/docker/nodejs-tutorialspoint
+git reset --hard origin/master
 docker-compose -f docker-compose.prod.yaml up -d
